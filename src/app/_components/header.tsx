@@ -3,9 +3,7 @@
 import React, { useState } from "react";
 import Image from 'next/image';
 import { FiSearch, FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
-// import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import Button from 
 
 export default function Header() {
     const [showDropdown, setShowDropdown] = useState(false);
@@ -54,7 +52,7 @@ export default function Header() {
                         onMouseEnter={() => setShowDropdown(true)}
                         onMouseLeave={() => setShowDropdown(false)}
                     >
-                       <Button variant="outline-primary">Primary</Button>
+                       <button type="button" className="btn btn-success">Primary</button>
 
                         <AnimatePresence>
                             {showDropdown && (
@@ -88,15 +86,10 @@ export default function Header() {
                 <div className="hidden lg:flex items-center gap-3 flex-shrink-0 ml-6">
                     <div className="flex items-center border border-gray-300 bg-white rounded-full px-4 py-2 w-40 md:w-56 xl:w-64">
                         <FiSearch className="text-gray-400 mr-2" />
-                        <input
-                            type="text"
-                            placeholder="Buscar..."
-                            className="outline-none text-sm w-full bg-transparent"
-                        />
+                        <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
+
                     </div>
-                    <Button className="bg-red-600 text-white px-5 py-2 rounded-full hover:bg-red-700 active:scale-95 transition-all duration-200">
-                        Entrar
-                    </Button>
+                    <button className="btn btn-primary">Clique</button>
                 </div>
             </div>
 
@@ -169,9 +162,7 @@ export default function Header() {
                             </div>
 
                             {/* Botão Entrar */}
-                            <Button className="w-full bg-red-600 text-white px-5 py-2 rounded-full hover:bg-red-700 active:scale-95 transition-all duration-200 mt-2">
-                                Entrar
-                            </Button>
+                            <button className="btn btn-primary">Clique</button>
                         </div>
                     </motion.div>
                 )}
